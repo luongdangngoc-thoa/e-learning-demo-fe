@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  elearning-redis:
+    image: redis:alpine
+    container_name: elearning-redis
+    ports:
+      - "6379:6379"
+    env_file:
+      - .env
+    networks:
+      - elearning-network
+
+networks:
+  elearning-network:
+    driver: bridge
